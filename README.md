@@ -1,7 +1,8 @@
-# Getting Started with Create React App
+# Getting Started with Shakhzod Akhmadov
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is available on github [Houzing](https://github.com/ShaKhzodbey/houzing).
 
+# Can see the DEMO [Houzing](https://netlify.com/ShaKhzodbey/houzing).
 ## Available Scripts
 
 In the project directory, you can run:
