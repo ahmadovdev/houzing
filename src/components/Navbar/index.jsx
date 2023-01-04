@@ -2,19 +2,21 @@ import React from 'react'
 import logoImg from "../../assets/img/logo.png";
 import { Outlet, useNavigate } from 'react-router-dom';
 import { navbar } from '../../utils/navbar'
-import { Container, Logo, Link, Section, Wrapper } from './style';
+import { Container, Logo, Link, Section, Wrapper, Main } from './style';
+import { Button } from '../Generic/Button';
 
 export const Home = () => {
   const navigate = useNavigate();
   return (
   <Container>
+    <Main>
     <Wrapper>
       <Section onClick={() => navigate('/home')} logo>
         <Logo src={logoImg}/><h3>Houzing</h3>
       </Section>
       <Section>
-        {navbar.map(({title, path}, index) => {
-            return(
+        {navbar.map(({title, path, hidden}, index) => {
+            return !hidden && (
               <Link 
                 className={({isActive}) => isActive && 'active'} 
                 key={index} 
@@ -25,10 +27,13 @@ export const Home = () => {
           })}
       </Section>
       <Section>
-        <button>Sign in</button>
+        <Button onClick={() => navigate('/signin')} type='dark'>
+          Sign in
+        </Button>
       </Section>
     </Wrapper>
-    <Outlet />
+    </Main>
+    <Outlet />  
   </Container>
   )
 }
