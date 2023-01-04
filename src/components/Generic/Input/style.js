@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const getType = ({type}) => {
+const getType = ({ type }) => {
   switch (type) {
     case "dark":
       return {
@@ -13,19 +13,19 @@ const getType = ({type}) => {
         background: "#fff",
         border: "1px solid #e6e9ec",
         color: "#0d263b",
-      };  
-    case 'primary':
+      };
+    case "primary":
       return {
         background: "#0061df",
         border: "none",
         color: "#fff",
-      }
+      };
     default:
       return {
         background: "#0061df",
         border: "none",
         color: "#fff",
-      }
+      };
   }
 };
 
@@ -37,10 +37,23 @@ const Container = styled.input`
   min-width: 120px;
   height: ${({ height }) => (height ? `${height}px` : "44px")};
   width: ${({ width }) => (width ? `${width}px` : "100%")};
-  fontSize: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
+  fontsize: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   outline: none;
   border: 1px solid #e6e9ec;
+  padding-left: ${({ icon }) => (icon ? "35px" : "20px")};
   // ${getType};
 `;
 
-export { Container };
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: ${({ width }) => (width ? `${width}px` : "100%")};
+`;
+const Icon = styled.div`
+  position: absolute;
+  left: 10px;
+`;
+
+
+export { Container, Wrapper, Icon };
